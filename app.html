@@ -11,11 +11,24 @@
 </head>
 <body onresize="tamanhoTela()">
 
-    
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="img/coracao_cheio.png">
+            <img id="v2" src="img/coracao_cheio.png">
+            <img id="v3" src="img/coracao_cheio.png">
+        </div>
+        <div class="cronometro">
+            Tempo restante: ?
+        </div>
+    </div>
 
 
     <script>
-        posicaoRandom();
+        
+        setInterval(function(){
+            posicaoRandom();
+        }, 1000);
+
     </script>
 </body>
 </html>

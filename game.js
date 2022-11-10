@@ -1,5 +1,6 @@
 var altura = 0;
 var largura = 0;
+var vidas = 1;
 
 function tamanhoTela() {
     altura = window.innerHeight;
@@ -9,6 +10,20 @@ function tamanhoTela() {
 tamanhoTela();
 
 function posicaoRandom() {
+
+    //remover o morty anterior(caso exista)
+    if(document.getElementById('morty')){
+        document.getElementById('morty').remove();
+
+        //gameover
+        if(vidas > 3) {
+            alert('game over');
+        } else {
+            document.getElementById('v' + vidas).src="img/coracao_vazio.png";
+            vidas++;
+        }
+    }
+
     var posicaoX = Math.floor(Math.random() * largura) - 90;
     var posicaoY = Math.floor(Math.random() * altura) -90;
 
@@ -20,10 +35,14 @@ function posicaoRandom() {
     //criar o elemento html
     var morty = document.createElement('img');
     morty.src = 'img/morty.png';
-    morty.className = tamanhoMorty();
+    morty.className = tamanhoMorty() + ' ' + ladoMorty();
     morty.style.left = posicaoX + 'px';
     morty.style.top = posicaoY + 'px';
     morty.style.position = 'absolute';
+    morty.id = 'morty';
+    morty.onclick = function () {
+        this.remove()
+    }
 
     document.body.appendChild(morty);
 
@@ -43,5 +62,12 @@ function tamanhoMorty() {
 }
 
 function ladoMorty() {
-    
+    var classe = Math.floor(Math.random() * 2);
+    switch(classe) {
+        case 0:
+            return 'ladoA';
+        case 1:
+            return 'ladoB';
+    }
+
 }
