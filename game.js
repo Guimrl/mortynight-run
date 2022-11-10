@@ -1,6 +1,7 @@
 var altura = 0;
 var largura = 0;
 var vidas = 1;
+var tempo = 10;
 
 function tamanhoTela() {
     altura = window.innerHeight;
@@ -8,6 +9,20 @@ function tamanhoTela() {
     console.log(largura, altura);
 }
 tamanhoTela();
+
+var cronometro = setInterval(function() {
+
+    tempo -= 1;
+
+    if(tempo < 0) {
+        clearInterval(cronometro)
+        clearInterval(criaMorty)
+        alert('vitoria')
+    } else {
+        document.getElementById('cronometro').innerHTML = tempo;
+    }
+    
+}, 1000);
 
 function posicaoRandom() {
 

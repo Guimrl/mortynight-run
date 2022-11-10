@@ -18,14 +18,15 @@
             <img id="v3" src="img/coracao_cheio.png">
         </div>
         <div class="cronometro">
-            Tempo restante: ?
+            Tempo restante: <span id="cronometro"></span>
         </div>
     </div>
 
 
     <script>
-        
-        setInterval(function(){
+        document.getElementById('cronometro').innerHTML = tempo;
+
+        var criaMorty = setInterval(function(){
             posicaoRandom();
         }, 1000);
 
