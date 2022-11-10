@@ -41,3 +41,7 @@ function tamanhoMorty() {
             return 'morty3';
     }
 }
+
+function ladoMorty() {
+    
+}
