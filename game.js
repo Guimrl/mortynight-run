@@ -20,10 +20,24 @@ function posicaoRandom() {
     //criar o elemento html
     var morty = document.createElement('img');
     morty.src = 'img/morty.png';
-    morty.className = 'morty1';
+    morty.className = tamanhoMorty();
     morty.style.left = posicaoX + 'px';
     morty.style.top = posicaoY + 'px';
     morty.style.position = 'absolute';
 
     document.body.appendChild(morty);
+
+
+}
+
+function tamanhoMorty() {
+    var classe = Math.floor(Math.random() * 3);
+    switch(classe) {
+        case 0:
+            return 'morty1';
+        case 1:
+            return 'morty2';
+        case 2:
+            return 'morty3';
+    }
 }
