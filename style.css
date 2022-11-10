@@ -1,6 +1,13 @@
 body {
     background-image: url(img/bg.jpg);
     background-repeat: no-repeat;
+    /* background-size: 100%; */
+}
+/* @media(min-width: 450px) {
+    background-size: ;
+} */
+.logo {
+    margin-bottom: -90px;
 }
 .morty1 {
     width: 45px;

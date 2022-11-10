@@ -3,6 +3,25 @@ var largura = 0;
 var vidas = 1;
 var tempo = 10;
 
+var criaMortyTempo = 2000;
+
+var nivel = window.location.search;
+nivel = nivel.replace('?', '')
+
+if(nivel === 'morty') {
+    //2000
+    criaMortyTempo = 2000;
+} else if(nivel === 'normal') {
+    //1500
+    criaMortyTempo = 1500;
+} else if(nivel === 'dificil') {
+    //1000
+    criaMortyTempo = 1000;
+} else if(nivel === 'extremo') {
+    //750
+    criaMortyTempo = 750;
+}
+
 function tamanhoTela() {
     altura = window.innerHeight;
     largura = window.innerWidth;
@@ -17,7 +36,7 @@ var cronometro = setInterval(function() {
     if(tempo < 0) {
         clearInterval(cronometro)
         clearInterval(criaMorty)
-        alert('vitoria')
+        window.location.href = 'vitoria.html';
     } else {
         document.getElementById('cronometro').innerHTML = tempo;
     }
