@@ -1,12 +1,12 @@
 var altura = 0;
 var largura = 0;
 var vidas = 1;
-var tempo = 10;
+var tempo = 60;
 
 var criaMortyTempo = 2000;
 
 var nivel = window.location.search;
-nivel = nivel.replace('?', '')
+nivel = nivel.replace('?', '');
 
 if(nivel === 'morty') {
     //2000
