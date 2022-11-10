@@ -17,7 +17,8 @@ function posicaoRandom() {
 
         //gameover
         if(vidas > 3) {
-            alert('game over');
+            
+            window.location.href = 'fim_de_jogo.html';
         } else {
             document.getElementById('v' + vidas).src="img/coracao_vazio.png";
             vidas++;
