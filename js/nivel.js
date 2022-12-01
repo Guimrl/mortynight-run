@@ -14,6 +14,9 @@ if(nivel === 'morty') {
 } else if(nivel === 'extremo') {
     //750
     criaMortyTempo = 750;
+} else if(nivel === 'impossible') {
+    //300
+    criaMortyTempo = 300;
 }
 
 console.log('o nivel escolhido é: ',nivel)
