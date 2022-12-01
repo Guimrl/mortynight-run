@@ -1,5 +1,5 @@
 html {
-	cursor: url(imagens/mata_mosquito.png) 30 30, auto;
+	cursor: url(img/mata_mosquito.png) 30 30, auto;
 }
 
 body {
@@ -10,7 +10,9 @@ body {
     background-attachment: fixed;
 }
 .logo {
+    margin-top: -50px;
     margin-bottom: -90px;
+    align-items: center;
 }
 .morty1 {
     width: 45px;
