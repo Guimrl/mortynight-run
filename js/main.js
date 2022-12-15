@@ -1,11 +1,11 @@
 let altura = 0;
 let largura = 0;
 let vidas = 1;
-let tempo = 10;
+let tempo = 45;
 
 let criaMortyTempo = 2000;
 
-let nivel = window.location.search;
+var nivel = window.location.search;
 nivel = nivel.replace('?', '');
 
 if(nivel === 'morty') {
@@ -34,15 +34,17 @@ function tamanhoTela() {
 tamanhoTela();
 
 //cronometro
-let cronometro = setInterval(() => {
+let cronometro = setInterval(function() {
+
     tempo -= 1;
     if(tempo < 0) {
         //vitoria
         clearInterval(cronometro);
-        clearInterval(criaMortyTempo);
+        clearInterval(criaMorty);
         window.location.href = 'vitoria.html';
     } else {
         document.getElementById('cronometro').innerHTML = tempo;
+        // console.log(cronometro)
     }
 },1000)
 
