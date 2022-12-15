@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,7 @@
     <title>Mortynight Run</title>
     <link rel="icon" type="image/x-icon" href="/img/blips-and-chitz-logo.png">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/morty.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/nivel.js"></script>
 </head>
 <body onresize="tamanhoTela()" style="background-image: url(img/bg.jpg);">
 
@@ -26,12 +24,11 @@
 
 
     <script>
-        document.getElementById('cronometro').innerHTML = tempo;
 
-        var criaMorty = setInterval(function(){
-            posicaoRandom();
+        let criaMorty = setInterval(() => {
+            posicaoRandomica();
         }, criaMortyTempo);
-
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

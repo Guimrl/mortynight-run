@@ -1,69 +1,121 @@
-var altura = 0;
-var largura = 0;
-var vidas = 1;
-var tempo = 60;
+let altura = 0;
+let largura = 0;
+let vidas = 1;
+let tempo = 10;
+
+let criaMortyTempo = 2000;
+
+let nivel = window.location.search;
+nivel = nivel.replace('?', '');
+
+if(nivel === 'morty') {
+    //2000
+    criaMortyTempo = 2000;
+} else if(nivel === 'normal') {
+    //1500
+    criaMortyTempo = 1500;
+} else if(nivel === 'hard') {
+    //1000
+    criaMortyTempo = 1000;
+} else if(nivel === 'extreme') {
+    //750
+    criaMortyTempo = 750;
+} else if(nivel === 'impossible') {
+    //500
+    criaMortyTempo = 500;
+}
 
 function tamanhoTela() {
     altura = window.innerHeight;
     largura = window.innerWidth;
+
     console.log(largura, altura);
 }
 tamanhoTela();
 
-var cronometro = setInterval(function() {
-
+//cronometro
+let cronometro = setInterval(() => {
     tempo -= 1;
-
     if(tempo < 0) {
+        //vitoria
         clearInterval(cronometro);
-        clearInterval(criaMorty);
+        clearInterval(criaMortyTempo);
         window.location.href = 'vitoria.html';
     } else {
         document.getElementById('cronometro').innerHTML = tempo;
     }
-    
-}, 1000);
+},1000)
 
-function posicaoRandom() {
+function posicaoRandomica() {
 
     //remover o morty anterior(caso exista)
-    if(document.getElementById('morty')){
-        document.getElementById('morty').remove();
+    let criaMorty = document.getElementById('morty');
+    if(criaMorty) {
+        criaMorty.remove();
 
         //gameover
         if(vidas > 3) {
-            
             window.location.href = 'fim_de_jogo.html';
-            
+            alert('oi')
         } else {
-            document.getElementById('v' + vidas).src="img/coracao_vazio.png";
+            //controle de vidas
+            document.getElementById('v' + vidas).src='img/coracao_vazio.png';
             vidas++;
         }
     }
 
-    var posicaoX = Math.floor(Math.random() * largura) - 90;
-    var posicaoY = Math.floor(Math.random() * altura) -90;
+    
+
+    //sorteia uma posicao randomica na tela
+    let posicaoX = Math.floor(Math.random() * largura) - 90;
+    let posicaoY = Math.floor(Math.random() * altura) - 90;
 
     posicaoX = posicaoX < 0 ? 0 : posicaoX;
     posicaoY = posicaoY < 0 ? 0 : posicaoY;
-
-    console.log('a posiçao do Morty',posicaoX, posicaoY);
-
-    //criar o elemento html
-    var morty = document.createElement('img');
+    
+    console.log(posicaoX, posicaoY);
+    
+    //criar morty elemento html
+    let morty = document.createElement('img');
     morty.src = 'img/morty.png';
-    morty.className = tamanhoMorty() + ' ' + ladoMorty();
+    morty.className = tamanhoAleatorio() + ' ' + ladoAleatorio();
     morty.style.left = posicaoX + 'px';
     morty.style.top = posicaoY + 'px';
     morty.style.position = 'absolute';
+
     morty.id = 'morty';
-    morty.onclick = function () {
-        this.remove()
+
+    //controle dos clicks dos mortys
+    morty.onclick = function() {
+        this.remove();
     }
 
     document.body.appendChild(morty);
 
-
 }
 
+//gera tamanhos aleatorios de mortys
+function tamanhoAleatorio() {
+    let classe = Math.floor(Math.random() * 3);
+    
+    switch(classe) {
+        case 0:
+            return 'morty1';
+        case 1:
+            return 'morty2';
+        case 2:
+            return 'morty3';
+    }
+}
 
+//gera tamanhos de mortys aleatorios
+function ladoAleatorio() {
+    let classe = Math.floor(Math.random() * 2);
+    
+    switch(classe) {
+        case 0:
+            return 'ladoA';
+        case 1:
+            return 'ladoB';
+    }
+}
