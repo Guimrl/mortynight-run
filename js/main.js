@@ -28,15 +28,6 @@ function iniciarJogo() {
     setInterval(aumentarTempo, 1000);
 }
 
-function aumentarTempo() {
-    let m = Math.floor(segundos / 60);
-    let s = segundos % 60;
-    m = m < 10 ? `0${m}` : m
-    s = s < 10 ? `0${s}` : s
-    tempoEl.innerHTML = `${m}:${s}`
-    segundos++;
-}
-
 function posicaoRandomica() {
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -49,18 +40,18 @@ function criaPersonagem() {
     const personagem = document.createElement('div');
     personagem.classList.add('personagem');
     const { x, y } = posicaoRandomica();
-    personagem.style.top = `${y}px`
-    personagem.style.left = `${x}px`
-    personagem.innerHTML = `<img src="${personagem_escolhido.src}" alt="${personagem_escolhido.alt}" style="transform: rotate(${Math.random() * 360}deg)"
-    />`
+    personagem.style.top = `${y}px`;
+    personagem.style.left = `${x}px`;
+    personagem.innerHTML = `<img src="${personagem_escolhido.src}" alt="${personagem_escolhido.alt}" style="transform: rotate(${Math.random() * 360}deg)" />`;
 
-    personagem.addEventListener('click', clickPersonagem)
+    personagem.addEventListener('click', clickPersonagem);
 
     game_container.appendChild(personagem);
 }
 
 function adicionaPersonagem() {
-    setTimeout(criaPersonagem, 1000);
+    setTimeout(criaPersonagem, 900);
+    setTimeout(criaPersonagem, 1400);
 }
 
 function clickPersonagem() {
@@ -70,12 +61,28 @@ function clickPersonagem() {
     adicionaPersonagem();
 }
 
+function aumentarTempo() {
+    let m = Math.floor(segundos / 60);
+    let s = segundos % 60;
+    m = m < 10 ? `0${m}` : m
+    s = s < 10 ? `0${s}` : s
+    tempoEl.innerHTML = `${m}:${s}`
+    segundos++;
+}
+
 function aumentarPonto() {
     ponto++;
-    if(ponto > 19) {
-        msg.classList.add('visivel')
-    }
+    tempoMensagem();
     pontoEl.innerHTML = `Pontuação: ${ponto}`;
+}
+
+function tempoMensagem() {
+    if(ponto > 19) {
+        msg.classList.add('visivel');
+        if(ponto >  25) {
+            msg.classList.remove('visivel');
+        }
+    }
 }
 
 
