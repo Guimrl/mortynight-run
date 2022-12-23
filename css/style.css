@@ -6,6 +6,7 @@
 
 body {
     background-color: #516DFF;
+    background-image: url('../img/bg.jpg');
     color: #FFF;
     font-family: 'Press Start 2P', sans-serif;
     height: 100vh;
@@ -95,17 +96,22 @@ h1 {
 }
 
 .tempo,
-.ponto {
+.ponto,
+.voltar {
     position: absolute;
     top: 20px;
 }
 
-.tempo {
+.voltar {
     left: 20px;
 }
 
-.tempo {
+.ponto {
     right: 20px;
+}
+
+.tempo{
+    text-align: center;
 }
 
 .mensagem {

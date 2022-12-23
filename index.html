@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Mortynight Run</title>
     <link rel="icon" type="image/x-icon" href="/img/blips-and-chitz-logo.png">
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="tela">
-      <h1>MortynightRun</h1>
-      <button class="btn" id="start-btn">Jogar</button>
+        <h1>MortynightRun</h1>
+        <button class="btn" id="start-btn">Jogar</button>
     </div>
 
     <div class="tela">
 
-      <h1>Escolha um personagem</h1>
-      <ul class="personagem-lista">
+        <h1>Escolha um personagem</h1>
+        <ul class="personagem-lista">
 
-        <li>
-          <button class="personagem-escolhido-btn">
-            <p>Morty</p>
-            <img src="./img/morty.png" alt="morty">
-          </button>
-        </li>
+            <li>
+                <button class="personagem-escolhido-btn">
+                    <p>Morty</p>
+                    <img src="./img/morty.png" alt="morty">
+                </button>
+            </li>
 
-        <li>
-          <button class="personagem-escolhido-btn">
-            <p>Rick</p>
-            <img src="./img/rick.png" alt="rick"/>
-          </button>
-        </li>
+            <li>
+                <button class="personagem-escolhido-btn">
+                    <p>Rick</p>
+                    <img src="./img/rick.png" alt="rick" />
+                </button>
+            </li>
 
 
-      </ul>
+        </ul>
     </div>
 
     <div class="tela game-container" id="game-container">
-      <h3 id="tempo" class="tempo">Tempo: 00:00</h3>
-      <h3 id="ponto" class="ponto">Pontuação: 0</h3>
-      <h5 id="mensagem" class="mensagem">
-         Agora a chapa vai esquentar!
-      </h5>
+        <h3 id="voltar" class="voltar">Voltar</h3>
+        <h3 id="tempo" class="tempo">00:00</h3>
+        <h3 id="ponto" class="ponto">Pontuação: 0</h3>
+        <h5 id="mensagem" class="mensagem">
+            Agora a chapa vai esquentar!
+        </h5>
     </div>
 
     <script src="./js/main.js"></script>
-  </body>
+</body>
+
 </html>
