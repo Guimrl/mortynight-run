@@ -1,8 +1,12 @@
-const start_btn = document.getElementById('start-btn');
+
 const telas = document.querySelectorAll('.tela');
 const personagem_escolhido_btn = document.querySelectorAll('.personagem-escolhido-btn');
+const start_btn = document.getElementById('start-btn');
 const game_container = document.getElementById('game-container');
 const tempoEl = document.getElementById('tempo');
+const pontoEl = document.getElementById('ponto');
+const msg = document.getElementById('mensagem');
+let ponto = 0;
 let segundos = 0;
 let personagem_escolhido = {}
 
@@ -47,7 +51,7 @@ function criaPersonagem() {
     const { x, y } = posicaoRandomica();
     personagem.style.top = `${y}px`
     personagem.style.left = `${x}px`
-    personagem.innerHTML = `<img src="${personagem_escolhido.src}"
+    personagem.innerHTML = `<img src="${personagem_escolhido.src}" alt="${personagem_escolhido.alt}" style="transform: rotate(${Math.random() * 360}deg)"
     />`
 
     personagem.addEventListener('click', clickPersonagem)
@@ -59,6 +63,20 @@ function adicionaPersonagem() {
     setTimeout(criaPersonagem, 1000);
 }
 
+function clickPersonagem() {
+    aumentarPonto();
+    this.classList.add('clicado');
+    setTimeout(() => this.remove(), 2000);
+    adicionaPersonagem();
+}
+
+function aumentarPonto() {
+    ponto++;
+    if(ponto > 19) {
+        msg.classList.add('visivel')
+    }
+    pontoEl.innerHTML = `Pontuação: ${ponto}`;
+}
 
 
 // let altura = 0;
