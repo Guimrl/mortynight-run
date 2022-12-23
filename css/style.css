@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-color: #5bad4a;
+}
+
 body {
     background-color: #516DFF;
     background-image: url('../img/bg.jpg');
@@ -21,12 +25,13 @@ a {
 
 h1 {
     line-height: 1.4;
+    color: var(--main-color);
 }
 
 .btn {
     border: 0;
     background-color: #FFF;
-    color: #516DFF;
+    color: var(--main-color);
     padding: 15px 20px;
     font-family: inherit;
     cursor: pointer;
@@ -34,6 +39,8 @@ h1 {
 
 .btn:hover {
     opacity: 0.9;
+    color: #FFF;
+    background-color: var(--main-color);
 }
 
 .btn:focus {
@@ -52,6 +59,10 @@ h1 {
 
 .tela.up {
     margin-top: -100vh;
+}
+
+.tela.down {
+    margin-bottom: 100vh;
 }
 
 .personagem-lista {
@@ -78,7 +89,7 @@ h1 {
 
 .personagem-escolhido-btn:hover {
     background-color: #FFF;
-    color: #516DFF;
+    color: var(--main-color);
 }
 
 .personagem-escolhido-btn:active {
@@ -104,6 +115,12 @@ h1 {
 
 .voltar {
     left: 20px;
+}
+
+.voltar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: var(--main-color);
 }
 
 .ponto {

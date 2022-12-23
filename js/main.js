@@ -1,3 +1,5 @@
+//double click ganha 2 pts
+//criar fim de jogo
 
 const telas = document.querySelectorAll('.tela');
 const personagem_escolhido_btn = document.querySelectorAll('.personagem-escolhido-btn');
@@ -6,11 +8,13 @@ const game_container = document.getElementById('game-container');
 const tempoEl = document.getElementById('tempo');
 const pontoEl = document.getElementById('ponto');
 const msg = document.getElementById('mensagem');
+const voltar = document.getElementById('voltar');
 let ponto = 0;
 let segundos = 0;
 let personagem_escolhido = {}
 
-start_btn.addEventListener('click', () => telas[0].classList.add('up'));
+start_btn.addEventListener('click', () => telas[0].classList.add('up').remove('down'));
+voltar.addEventListener('click', () => telas[0].classList.add('down').remove('up'));
 
 personagem_escolhido_btn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -73,7 +77,7 @@ function aumentarTempo() {
 function aumentarPonto() {
     ponto++;
     tempoMensagem();
-    pontoEl.innerHTML = `Pontuação: ${ponto}`;
+    pontoEl.innerHTML = `${ponto}`;
 }
 
 function tempoMensagem() {
@@ -198,7 +202,7 @@ function tempoMensagem() {
 //     }
 // }
 
-// //gera tamanhos de mortys aleatorios
+// //gera lados de mortys aleatorios
 // function ladoAleatorio() {
 //     let classe = Math.floor(Math.random() * 2);
     
