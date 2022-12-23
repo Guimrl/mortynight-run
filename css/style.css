@@ -1,81 +1,91 @@
-html {
-	cursor: url(../img/mata_mosca.png) 30 30, auto;
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url(img/bg.jpg);
-    background-repeat: none;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #516DFF;
+    color: #FFF;
+    font-family: 'Press Start 2P', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
 }
 
-.logo {
-    width: 800px;
-    margin-top: -50px;
-    margin-bottom: -90px;
-    align-items: center;
+a {
+    color: #FFF;
 }
 
-.venceu {
-    margin-top: -30px;
-    margin-bottom: 35px;
-    color: #fff;
+h1 {
+    line-height: 1.4;
 }
 
-.vitoria {
-    width: 600px;
-    /* margin-top: -30px; */
-    /* margin-bottom: 0; */
+.btn {
+    border: 0;
+    background-color: #FFF;
+    color: #516DFF;
+    padding: #516DFF;
+    font-family: inherit;
+    cursor: pointer;
 }
 
-.morty1 {
-    width: 45px;
-    height: 45px;
+.btn:hover {
+    opacity: 0.9;
 }
 
-.morty2 {
-    width: 65px;
-    height: 65px;
+.btn:focus {
+    outline: 0;
 }
 
-.morty3 {
-    width: 85px;
-    height: 85px;
-}
-
-.ladoA {
-    transform: scaleX(1);
-}
-
-.ladoB {
-    transform: scaleX(-1);
-}
-
-.painel {
-    position: absolute;
-    width: 190px;
-    padding: 10px;
-    left: 0px;
-    bottom: 0px;
-    border-top: solid 1px #fff;
-    background-color: #fff;
-    opacity: 0.7;
-}
-
-.vidas {
-    float: left;
-}
-
-.cronometro {
-    float: left;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.gameOver {
-    width: 600px;
+.tela {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    width: 100vh;
+    transition: margin 0.5s ease-out;
+}
+
+.tela.up {
+    margin-top: -100vh;
+}
+
+.personagem-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.personagem-lista li {
+    margin: 10px;
+}
+
+.personagem-escolhido-btn {
+    background-color: transparent;
+    border: 2px solid #FFF;
+    color: #FFF;
+    cursor: pointer;
+    font-family: inherit;
+    width: 150px;
+    height: 150px;
+}
+
+.personagem-escolhido-btn:hover {
+    background-color: #FFF;
+    color: #516DFF;
+}
+
+.personagem-escolhido-btn:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.personagem-escolhido-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
