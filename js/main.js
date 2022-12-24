@@ -14,7 +14,7 @@ let segundos = 0;
 let personagem_escolhido = {}
 
 start_btn.addEventListener('click', () => telas[0].classList.add('up').remove('down'));
-voltar.addEventListener('click', () => telas[0].classList.add('down').remove('up'));
+// voltar.addEventListener('click', () => telas[0].classList.add('down').remove('up'));
 
 personagem_escolhido_btn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -54,8 +54,8 @@ function criaPersonagem() {
 }
 
 function adicionaPersonagem() {
-    setTimeout(criaPersonagem, 900);
-    setTimeout(criaPersonagem, 1400);
+    setTimeout(criaPersonagem, 1000);
+    setTimeout(criaPersonagem, 1500);
 }
 
 function clickPersonagem() {

@@ -108,12 +108,12 @@ h1 {
 
 .tempo,
 .ponto,
-.voltar {
+#voltar {
     position: absolute;
     top: 20px;
 }
 
-.voltar {
+#voltar {
     left: 20px;
 }
 
@@ -127,7 +127,7 @@ h1 {
     right: 20px;
 }
 
-.tempo{
+.tempo {
     text-align: center;
 }
 
