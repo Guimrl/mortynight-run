@@ -9,8 +9,8 @@
 }
 
 body {
-    background-color: #516DFF;
-    background-image: url('../img/bg.jpg');
+    background-color: var(--main-color);
+    background-image: url('../img/bg.png');
     color: #FFF;
     font-family: 'Press Start 2P', sans-serif;
     height: 100vh;
@@ -19,13 +19,18 @@ body {
     text-align: center;
 }
 
+.logo {
+    width: 400px;
+    margin-bottom: -90px;
+}
+
 a {
     color: #FFF;
 }
 
 h1 {
     line-height: 1.4;
-    color: var(--main-color);
+    color: #fff;
 }
 
 .btn {
