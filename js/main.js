@@ -17,6 +17,7 @@ start_btn.addEventListener('click', () => telas[0].classList.add('up').remove('d
 // voltar.addEventListener('click', () => telas[0].classList.add('down').remove('up'));
 voltar.addEventListener('click', () => {
     document.location.reload();
+    telas[0].classList.add('down').remove('up')
 })
 
 personagem_escolhido_btn.forEach(btn => {
