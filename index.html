@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Mortynight Run</title>
-    <link rel="icon" type="image/x-icon" href="./img/blips-and-chitz-logo.png">
+    <meta name="description" content="Jogo baseado na série de TV Rick and Morty"/>
+    <meta name="keywords" content="JavaScript Vanilla, CSS, HTML"/>
+    <link rel="icon" type="image/x-icon" href="./img/blips-and-chitz-logo.png" />
 </head>
 
 <body>
-    <div class="tela">
+    <section class="tela">
         <img src="./img/logo.png" class="logo"/>
         <h1>MortynightRun</h1>
         <button class="btn" id="start-btn">Jogar</button>
-    </div>
+    </section>
 
-    <div class="tela">
+    <section class="tela">
 
         <h1>Escolha um personagem</h1>
         <ul class="personagem-lista">
@@ -24,50 +26,50 @@
             <li>
                 <button class="personagem-escolhido-btn">
                     <p>Morty</p>
-                    <img src="./img/morty.png" alt="morty">
+                    <img src="./img/morty.png" alt="Morty">
                 </button>
             </li>
             <li>
                 <button class="personagem-escolhido-btn">
                     <p>Rick</p>
-                    <img src="./img/rick.png" alt="rick" />
+                    <img src="./img/rick.png" alt="Rick" />
                 </button>
             </li>
             <li>
                 <button class="personagem-escolhido-btn">
                     <p>Summer</p>
-                    <img src="./img/summer.png" alt="rick" />
+                    <img src="./img/summer.png" alt="Summer" />
                 </button>
             </li>
             <li>
                 <button class="personagem-escolhido-btn">
                     <p>Beth</p>
-                    <img src="./img/beth.png" alt="rick" />
+                    <img src="./img/beth.png" alt="Beth" />
                 </button>
             </li>
             <li>
                 <button class="personagem-escolhido-btn">
                     <p>Beth Espacial</p>
-                    <img src="./img/beth_spacial.png" alt="rick" />
+                    <img src="./img/beth_spacial.png" alt="Beth Espacial" />
                 </button>
             </li>
             <li>
                 <button class="personagem-escolhido-btn">
                     <p>Jerry</p>
-                    <img src="./img/jerry.png" alt="rick" />
+                    <img src="./img/jerry.png" alt="Jerry" />
                 </button>
             </li>
         </ul>
-    </div>
+    </section>
 
-    <div class="tela game-container" id="game-container">
+    <section class="tela game-container" id="game-container">
         <button id="voltar" class="btn">Voltar</button>
         <h3 id="tempo" class="tempo">00:00</h3>
         <h3 id="ponto" class="ponto">0</h3>
         <h5 id="mensagem" class="mensagem">
             Wubalubadubdub! agora a chapa vai esquentar!
         </h5>
-    </div>
+    </section>
 
     <script src="./js/main.js"></script>
 </body>
