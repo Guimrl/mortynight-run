@@ -16,9 +16,9 @@ let personagem_escolhido = {}
 start_btn.addEventListener('click', () => telas[0].classList.add('up').remove('down'));
 // voltar.addEventListener('click', () => telas[0].classList.add('down').remove('up'));
 voltar.addEventListener('click', () => {
-    // document.location.href = 'https://guimrl.github.io/mortynight-run/';
+    document.location.href = 'https://guimrl.github.io/mortynight-run/';
     // telas[0].classList.add('down');
-    location.reload();
+    // location.reload();
 })
 console.log(telas)
 personagem_escolhido_btn.forEach(btn => {
